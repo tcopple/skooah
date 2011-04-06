@@ -6,7 +6,7 @@
 
 #duh
 class Publication < ActiveRecord::Base
-  has_one :author
+  has_one :author_profile
   
   has_many :comments, :class_name => "PublicationComment"
 

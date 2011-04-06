@@ -4,7 +4,13 @@ namespace :db do
     require 'populator'
     require 'faker'
 
-    [Author, Publication, PublicationComment, PublicationTag, Tag].each do |t|
+    [User, 
+      UserProfile, 
+      AuthorProfile, 
+      Publication, 
+      PublicationComment, 
+      PublicationTag, 
+      Tag].each do |t|
       t.send(:destroy_all) 
     end
 
@@ -12,28 +18,52 @@ namespace :db do
       tag.text = Populator.words(1).downcase
     end
 
-    Author.populate 15 do |author|
-      author.pen_name = Faker::Name.name
+    User.populate 10 do |user|
+      user.email = Faker::Internet.email
 
-      Publication.populate 2..10 do |publication|
-        publication.title = Populator.words(1..5).titleize
-        publication.image_url = Faker::Internet.domain_name + "/photo" + rand(1000).to_s
-        publication.author_id = author.id
-        publication.created_at = 1.year.ago..Time.now
-
-        PublicationComment.populate 1..5 do |comment|
-          comment.commenter_id = (1..15) #doesn't really point to anything yet
-          comment.comment = Populator.sentences(2..10)
-          comment.created_at = 1.year.ago..Time.now
-          comment.publication_id = publication.id 
-        end
-
-        PublicationTag.populate 1..5 do |pubtag|
-          pubtag.publication_id = publication.id
-          pubtag.tag_id = (1..30) 
-        end
+      UserProfile.populate 1 do |profile|
+        profile.user_id = user.id
+        profile.first_name = Faker::Name.first_name
+        profile.last_name = Faker::Name.last_name
+        profile.website = Faker::Internet.domain_name
       end
     end
 
+    User.populate 10 do |user|
+      user.email = Faker::Internet.email
+
+      UserProfile.populate 1 do |user|
+        user.user_id = user.id
+        user.first_name = Faker::Name.first_name
+        user.last_name = Faker::Name.last_name
+        user.website = Faker::Internet.domain_name
+      end
+
+      AuthorProfile.populate 1 do |author|
+        author.user_id = user.id
+        author.pen_name = Faker::Name.name
+        author.biography = Populator.sentences(5..10)
+
+        Publication.populate 2..10 do |publication|
+          publication.title = Populator.words(1..5).titleize
+          publication.image_url = Faker::Internet.domain_name + "/photo" + rand(1000).to_s
+          publication.author_profile_id = author.id
+          publication.created_at = 1.year.ago..Time.now
+
+          PublicationComment.populate 1..5 do |comment|
+            comment.commenter_id = (0..10) #doesn't really point to anything yet
+            comment.comment = Populator.sentences(2..10)
+            comment.created_at = 1.year.ago..Time.now
+            comment.publication_id = publication.id 
+          end
+
+          PublicationTag.populate 1..5 do |pubtag|
+            pubtag.publication_id = publication.id
+            pubtag.tag_id = (1..30) 
+          end
+        end
+      end
+
+    end
   end
 end

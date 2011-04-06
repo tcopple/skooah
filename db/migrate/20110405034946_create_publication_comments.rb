@@ -1,4 +1,3 @@
-
 class CreatePublicationComments < ActiveRecord::Migration
   def self.up
     create_table :publication_comments do |t|

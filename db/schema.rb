@@ -10,10 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110405034946) do
+ActiveRecord::Schema.define(:version => 20110406061513) do
 
-  create_table "authors", :force => true do |t|
+  create_table "author_profiles", :force => true do |t|
     t.string   "pen_name"
+    t.text     "biography"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -37,13 +38,28 @@ ActiveRecord::Schema.define(:version => 20110405034946) do
   create_table "publications", :force => true do |t|
     t.string   "title"
     t.string   "image_url"
-    t.integer  "author_id"
+    t.integer  "author_profile_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "tags", :force => true do |t|
     t.string   "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_profiles", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "website"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
