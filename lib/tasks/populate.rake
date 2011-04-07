@@ -5,7 +5,6 @@ namespace :db do
     require 'faker'
 
     [User, 
-      UserProfile, 
       AuthorProfile, 
       Publication, 
       PublicationComment, 
@@ -20,24 +19,16 @@ namespace :db do
 
     User.populate 10 do |user|
       user.email = Faker::Internet.email
-
-      UserProfile.populate 1 do |profile|
-        profile.user_id = user.id
-        profile.first_name = Faker::Name.first_name
-        profile.last_name = Faker::Name.last_name
-        profile.website = Faker::Internet.domain_name
-      end
+      user.first_name = Faker::Name.first_name
+      user.last_name = Faker::Name.last_name
+      user.website = Faker::Internet.domain_name
     end
 
     User.populate 10 do |user|
       user.email = Faker::Internet.email
-
-      UserProfile.populate 1 do |user|
-        user.user_id = user.id
-        user.first_name = Faker::Name.first_name
-        user.last_name = Faker::Name.last_name
-        user.website = Faker::Internet.domain_name
-      end
+      user.first_name = Faker::Name.first_name
+      user.last_name = Faker::Name.last_name
+      user.website = Faker::Internet.domain_name
 
       AuthorProfile.populate 1 do |author|
         author.user_id = user.id
