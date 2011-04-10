@@ -3,10 +3,6 @@ form label {
 	font-weight: bold;
 }
 
-form div.form-element {
-	margin-bottom: 10px;
-}
-
 form input[type=text],
 form input[type=email],
 form input[type=password] {
@@ -17,6 +13,28 @@ form input[type=password] {
 form input[type=checkbox] {
 	position: relative;
 	top: 1px;
+}
+
+form div.form-element {
+	margin-bottom: 10px;
+}
+
+form div.form-checkbox {
+	margin-bottom: 20px;
+}
+
+form div.form-checkbox label {
+	display: inline;
+	font-weight: normal;
+}
+
+form div.explanation {
+	color: #999999;
+	display: inline;
+	font-size: 11px;
+	padding-left: 5px;
+	position: relative;
+	bottom: 2px;
 }
 
 #errors h3 {
@@ -34,22 +52,4 @@ form input[type=checkbox] {
 	font-size: 12px;
 	list-style: none;
 	margin-left: 20px;
-}
-
-div.explanation {
-	color: #999999;
-	display: inline;
-	font-size: 11px;
-	padding-left: 5px;
-	position: relative;
-	bottom: 2px;
-}
-
-div.tos {
-	margin-bottom: 20px;
-}
-
-div.tos label {
-	display: inline;
-	font-weight: normal;
 }
