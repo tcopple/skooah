@@ -1,10 +1,7 @@
 !!! html5
 %html
   %head
-    = stylesheet_link_tag '960'
-    = stylesheet_link_tag 'reset'
-    = stylesheet_link_tag 'text'
-    = stylesheet_link_tag 'global'
+    = stylesheet_link_tag '960','reset','text','global','forms'
     %title Skooah 
 
     %body
@@ -14,9 +11,11 @@
             %img{"src" => "/images/layout/logo.png"}
           
           %ul#user-options
+            %li
+              %a{"href" => "/about"}
+                About Us
+            
             - if user_signed_in?
-              %li
-                Welcome  #{current_user.username} | 
               %li
                 Manage Profile | 
               %li
@@ -25,7 +24,7 @@
             - else
               %li
                 %a{"href" => "/users/sign_up"}
-                  Register
+                  Sign Up
               %li
                 %a{"href" => "/users/sign_in"}
                   Login

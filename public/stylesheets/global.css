@@ -13,7 +13,10 @@ body {
 }
 
 #header a {
-	color: #c8da86;
+	color: #b7dd5b;
+	font-size: 15px;
+	font-weight: bold;
+	text-decoration: none;
 }
 
 #user-options {
@@ -26,7 +29,7 @@ body {
 	display: inline;
 	float: left;
 	list-style: none;
-	margin-left: 15px;
+	margin-left: 20px;
 }
 
 #intro {
