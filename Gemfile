@@ -6,6 +6,7 @@ gem 'haml'
 gem 'formtastic'
 gem 'populator'
 gem 'faker'
+gem 'devise'
 
 # Use unicorn as the web server
 # gem 'unicorn'

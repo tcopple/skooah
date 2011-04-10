@@ -13,4 +13,7 @@
           %img{"src" => "/images/layout/logo.png"}
           
         #main 
+          %p.notice= notice
+          %p.alert= alert
+        
           = yield
