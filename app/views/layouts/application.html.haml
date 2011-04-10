@@ -10,7 +10,25 @@
     %body
       #container.container_12
         #header
-          %img{"src" => "/images/layout/logo.png"}
+          %a{"href" => "/"}
+            %img{"src" => "/images/layout/logo.png"}
+          
+          %ul#user-options
+            - if user_signed_in?
+              %li
+                Welcome  #{current_user.username} | 
+              %li
+                Manage Profile | 
+              %li
+                %a{"href" => "/users/sign_out"} 
+                  Sign Out
+            - else
+              %li
+                %a{"href" => "/users/sign_up"}
+                  Register
+              %li
+                %a{"href" => "/users/sign_in"}
+                  Login
           
         #main 
           %p.notice= notice

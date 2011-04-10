@@ -4,11 +4,29 @@ body {
 }
 
 #header {
+	color: #FFFFFF;
 	height: 75px;
 }
 
 #header img {
 	margin-top: 10px;
+}
+
+#header a {
+	color: #c8da86;
+}
+
+#user-options {
+	display: inline;
+	float: right;
+	margin: 50px 0 0 0;
+}
+
+#user-options li {
+	display: inline;
+	float: left;
+	list-style: none;
+	margin-left: 15px;
 }
 
 #intro {
