@@ -2,8 +2,9 @@ Skooah::Application.routes.draw do
   devise_for :users
   
   resources :session
-
-  get "home/index"
+  
+  match 'about' => 'content#about'
+  match 'terms-of-service' => 'content#tos'
 
   root :to => "home#index"
 end
