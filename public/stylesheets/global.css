@@ -1,17 +1,27 @@
-@charset "UTF-8";
+body {
+	background: url(/images/layout/header_bg.gif) repeat-x top #EFEFE3;
+	color: #333333;
+}
 
-.clear { clear:both; } 
-.right { float: right; } 
-.left { float: left; }
+#header {
+	height: 75px;
+}
 
-/* mimics header tags but won't create block */
-.inline1 { font-size: 2.0em; line-height: 2.0em; } 
-.inline2 { font-size: 1.8em; line-height: 1.8em; } 
-.inline3 { font-size: 1.6em; line-height: 1.6em; } 
-.inline4 { font-size: 1.4em; line-height: 1.4em; } 
-.inline5 { font-size: 1.2em; line-height: 1.2em; } 
-.inline6 { font-size: 0.8em; } 
+#header img {
+	margin-top: 10px;
+}
 
-.italic { font-style: italic; }
-.bold { font-weight: bold; }
+#intro {
+	margin-bottom: 40px;
+}
 
+div.info-box h2 {
+	border-bottom: 1px solid #333333;
+	margin-bottom: 5px;
+}
+
+div.info-box img {
+	display: inline;
+	float: left;
+	margin: 5px 10px 10px 0;
+}

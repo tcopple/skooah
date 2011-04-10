@@ -1,10 +1,16 @@
 !!! html5
 %html
   %head
-    = stylesheet_link_tag 'blueprint/screen'
-    = stylesheet_link_tag 'blueprint/print', :media => 'print'
+    = stylesheet_link_tag '960'
+    = stylesheet_link_tag 'reset'
+    = stylesheet_link_tag 'text'
     = stylesheet_link_tag 'global'
     %title Skooah 
 
     %body
-      = yield
+      #container.container_12
+        #header
+          %img{"src" => "/images/layout/logo.png"}
+          
+        #main 
+          = yield
