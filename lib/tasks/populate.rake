@@ -19,16 +19,16 @@ namespace :db do
 
     User.populate 10 do |user|
       user.email = Faker::Internet.email
-      user.first_name = Faker::Name.first_name
-      user.last_name = Faker::Name.last_name
-      user.website = Faker::Internet.domain_name
+      #user.first_name = Faker::Name.first_name
+      #user.last_name = Faker::Name.last_name
+      #user.website = Faker::Internet.domain_name
     end
 
     User.populate 10 do |user|
       user.email = Faker::Internet.email
-      user.first_name = Faker::Name.first_name
-      user.last_name = Faker::Name.last_name
-      user.website = Faker::Internet.domain_name
+      #user.first_name = Faker::Name.first_name
+      #user.last_name = Faker::Name.last_name
+      #user.website = Faker::Internet.domain_name
 
       AuthorProfile.populate 1 do |author|
         author.user_id = user.id
