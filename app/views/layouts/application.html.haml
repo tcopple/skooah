@@ -1,8 +1,8 @@
 !!! html5
 %html
   %head
-    = stylesheet_link_tag '960','reset','text','global','forms'
     %title Skooah 
+    = stylesheet_link_tag @stylesheets, :cache => true
 
     %body
       #container.container_12

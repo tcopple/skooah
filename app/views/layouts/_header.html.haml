@@ -9,7 +9,7 @@
     
     - if user_signed_in?
       %li
-        Manage Profile | 
+        = link_to('View Profile', current_author)
       %li
         %a{"href" => "/users/sign_out"} 
           Logout
@@ -20,4 +20,3 @@
       %li
         %a{"href" => "/users/sign_in"}
           Login
-  

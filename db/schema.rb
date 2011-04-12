@@ -10,12 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110410034831) do
+ActiveRecord::Schema.define(:version => 20110410210721) do
 
-  create_table "author_profiles", :force => true do |t|
-    t.string   "pen_name"
-    t.text     "biography"
+  create_table "authors", :force => true do |t|
     t.integer  "user_id"
+    t.string   "pen_name"
+    t.string   "website"
+    t.text     "biography"
+    t.string   "portrait"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -38,7 +40,8 @@ ActiveRecord::Schema.define(:version => 20110410034831) do
   create_table "publications", :force => true do |t|
     t.string   "title"
     t.string   "image_url"
-    t.integer  "author_profile_id"
+    t.integer  "author_id"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

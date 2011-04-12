@@ -5,7 +5,7 @@ namespace :db do
     require 'faker'
 
     [User, 
-      AuthorProfile, 
+      Author, 
       Publication, 
       PublicationComment, 
       PublicationTag, 
@@ -21,24 +21,23 @@ namespace :db do
       user.email = Faker::Internet.email
       #user.first_name = Faker::Name.first_name
       #user.last_name = Faker::Name.last_name
-      #user.website = Faker::Internet.domain_name
     end
 
     User.populate 10 do |user|
       user.email = Faker::Internet.email
       #user.first_name = Faker::Name.first_name
       #user.last_name = Faker::Name.last_name
-      #user.website = Faker::Internet.domain_name
 
-      AuthorProfile.populate 1 do |author|
+      Author.populate 1 do |author|
         author.user_id = user.id
         author.pen_name = Faker::Name.name
         author.biography = Populator.sentences(5..10)
+        author.website = Faker::Internet.domain_name
 
         Publication.populate 2..10 do |publication|
           publication.title = Populator.words(1..5).titleize
           publication.image_url = Faker::Internet.domain_name + "/photo" + rand(1000).to_s
-          publication.author_profile_id = author.id
+          publication.author_id = author.id
           publication.created_at = 1.year.ago..Time.now
           publication.description = Populator.sentences(5..10)
 
