@@ -6,29 +6,8 @@
 
     %body
       #container.container_12
-        #header
-          %a{"href" => "/"}
-            %img{"src" => "/images/layout/logo.png"}
-          
-          %ul#user-options
-            %li
-              %a{"href" => "/about"}
-                About Us
-            
-            - if user_signed_in?
-              %li
-                Manage Profile | 
-              %li
-                %a{"href" => "/users/sign_out"} 
-                  Logout
-            - else
-              %li
-                %a{"href" => "/users/sign_up"}
-                  Sign Up
-              %li
-                %a{"href" => "/users/sign_in"}
-                  Login
-          
+        = render :partial => "layouts/header"
+
         #main 
           %p.notice= notice
           %p.alert= alert
