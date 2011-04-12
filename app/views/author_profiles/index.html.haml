@@ -1,0 +1,5 @@
+%h1 Author List
+
+%ul
+- @authors.each do |a|
+  %li= link_to "#{a.pen_name}", author_profile_path(:id => a.id)

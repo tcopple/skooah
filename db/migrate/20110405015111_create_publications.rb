@@ -4,6 +4,7 @@ class CreatePublications < ActiveRecord::Migration
       t.string :title
       t.string :image_url #should this jsut be an id?
       t.integer :author_profile_id
+      t.string :description
 
       t.timestamps
     end

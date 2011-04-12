@@ -55,3 +55,11 @@ div.info-box div.actions {
 div.info-box div.actions img.alpha {
 	margin-right: 20px;
 }
+
+div.publication {
+    padding-bottom: 40px;
+}
+
+.left { float: left; }
+.right { float: right; }
+.inline { display: inline; }

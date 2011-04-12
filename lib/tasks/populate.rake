@@ -40,6 +40,7 @@ namespace :db do
           publication.image_url = Faker::Internet.domain_name + "/photo" + rand(1000).to_s
           publication.author_profile_id = author.id
           publication.created_at = 1.year.ago..Time.now
+          publication.description = Populator.sentences(5..10)
 
           PublicationComment.populate 1..5 do |comment|
             comment.commenter_id = (0..10) #doesn't really point to anything yet

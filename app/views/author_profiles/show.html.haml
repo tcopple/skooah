@@ -1,0 +1,17 @@
+%h1= @author.pen_name
+%p#intro= @author.biography
+
+
+- @author.publications.each do |p|
+  -cycle(1, 2, 3)
+ 
+  .publication.grid_4
+    %h3= p.title
+    //image url should be here, but they don't actually point to anything yet
+    =p.description
+    .clear
+    .inline
+      .right== #{p.comments.count} comments
+
+  -if current_cycle.to_i % 3 == 0
+    .clear
