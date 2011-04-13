@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110410210721) do
+ActiveRecord::Schema.define(:version => 20110413024335) do
 
   create_table "authors", :force => true do |t|
     t.integer  "user_id"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20110410210721) do
     t.datetime "confirmation_sent_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_author"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

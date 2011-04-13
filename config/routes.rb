@@ -1,7 +1,8 @@
 Skooah::Application.routes.draw do
   resources :authors
 
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
+
   
   resources :session
   

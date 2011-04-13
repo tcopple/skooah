@@ -1,0 +1,23 @@
+- form_for(@author) do |f|
+  .form-element
+    = f.label :user_id
+    = f.text_field :user_id
+
+  .form-element
+    = f.label :pen_name
+    = f.text_field :pen_name
+
+  .form-element
+    = f.label :website
+    = f.text_field :website
+
+  .form-element
+    = f.label :biography
+    = f.text_area :biography
+
+  .form-element
+    = f.label :portrait
+    = f.text_field :portrait
+
+  .form-element
+    = f.submit
