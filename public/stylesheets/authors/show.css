@@ -1,5 +1,21 @@
+#author_profile {
+	margin-bottom: 20px;
+}
+
 #author_profile img {
 	display: inline;
 	float: left;
 	margin: 0 10px 10px 0;
+}
+
+div.publication {
+	text-align: center;
+}
+
+div.publication h3 {
+	font-size: 14px;
+}
+
+div.publication p {
+	text-align: left;
 }

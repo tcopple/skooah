@@ -1,25 +1,30 @@
 %h1= @author.pen_name
 
-#author_publications.grid_8
+#author_profile  
+  %img{"src" => "http://placekitten.com/150/150"}
+	
+  %p= @author.biography
+  
+  .clear
+
+
+
+#author_publications
+  %h2 Most Recent Books 
   - @author.publications.each do |p|
-    -cycle(1, 2)
+    -cycle(1, 2, 3, 4)
    
-    %div{"class" => "publication grid_4 #{current_cycle.to_i == 1 ? 'alpha' : 'omega'}"}
+    .publication.grid_3
+      %img{"src" => "http://placekitten.com/100/150"}
       %h3= p.title
-      //image url should be here, but they don't actually point to anything yet
-      =p.description
+      %p= p.description
       .clear
       .inline
         .right== #{p.comments.count} comments
   
-    -if current_cycle.to_i % 2 == 0
+    -if current_cycle.to_i % 4 == 0
       .clear	
 
-#author_profile.grid_4
-  %h2 Biography
-  
-  %img{"src" => "http://placekitten.com/150/200"}
-	
-  %p= @author.biography
+
 	
 	
