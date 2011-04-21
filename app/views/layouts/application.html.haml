@@ -4,12 +4,12 @@
     %title Skooah 
     = stylesheet_link_tag @stylesheets, :cache => true
 
-    %body
-      #container.container_12
-        = render :partial => "layouts/header"
+  %body
+    #container.container_12
+      = render :partial => "layouts/header"
 
-        #main 
-          %p.notice= notice
-          %p.alert= alert
-        
-          = yield
+      #main 
+        %p.notice= notice
+        %p.alert= alert
+
+        = yield
