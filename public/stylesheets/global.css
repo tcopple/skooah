@@ -58,6 +58,11 @@ div.info-box div.actions img.alpha {
 
 div.publication {
     padding-bottom: 40px;
+    text-align: center;
+}
+
+div.publication h3 {
+    font-size: 14px;
 }
 
 .left { float: left; }

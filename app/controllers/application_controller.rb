@@ -10,4 +10,10 @@ class ApplicationController < ActionController::Base
     @stylesheets << stylesheet
     @stylesheets.uniq!
   end
+
+  def current_author
+    if user_signed_in?
+      Author.where("user_id = ?", current_user.id).first
+    end
+  end
 end

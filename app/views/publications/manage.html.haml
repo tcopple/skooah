@@ -1,0 +1,11 @@
+%h1 Manage Your Books
+
+- current_author.publications.each do |p|
+  .publication.grid_3
+    %img{"src" => "http://placekitten.com/100/150"}
+    %h3= p.title
+
+    .actions
+      = link_to('Edit', edit_publication_path(p))
+      = link_to('Delete', p, :confirm => 'Are you sure?', :method => :delete)
+

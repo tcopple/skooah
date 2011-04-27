@@ -3,17 +3,20 @@
     %img{"src" => "/images/layout/logo.png"}
   
   %ul#user-options
-    %li
-      %a{"href" => "/about"}
-        About Us
-    
     - if user_signed_in?
       %li
         = link_to('View Profile', current_author)
       %li
+        = link_to('Edit Profile', edit_author_path(current_author))
+      %li
+        = link_to('Manage Books', manage_publications_path)
+      %li
         %a{"href" => "/users/sign_out"} 
           Logout
     - else
+      %li
+        %a{"href" => "/about"}
+          About Us
       %li
         %a{"href" => "/users/sign_up"}
           Sign Up

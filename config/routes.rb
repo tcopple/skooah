@@ -1,10 +1,11 @@
 Skooah::Application.routes.draw do
+  devise_for :users, :controllers => {:registrations => "registrations"}
+  resources :session
   resources :authors
 
-  devise_for :users, :controllers => {:registrations => "registrations"}
+  match "/publications/manage" => "publications#manage", :as => :manage_publications
+  resources :publications
 
-  resources :session
-  
   match 'about' => 'content#about'
   match 'terms-of-service' => 'content#tos'
 
