@@ -1,24 +1,14 @@
 class RegistrationsController < Devise::RegistrationsController
-  def create
-    build_resource
+  protected
 
-    if resource.save
-      sign_in(resource_name, resource)
-      
-      if resource.is_author
-        @author = Author.new({:user_id => resource.id})
-        
-        if(@author.save)
-          redirect_to edit_author_path(@author)
-        else
-          respond_with resource, :location => redirect_location(resource_name, resource)
-        end
-      else
-        respond_with resource, :location => redirect_location(resource_name, resource)
-      end
+  def after_sign_up_path_for(resource)
+    @author = Author.new({:user_id => resource.id})
+
+    if(@author.save)
+      return edit_author_path(@author)
     else
-      clean_up_passwords(resource)
-      respond_with_navigational(resource) { render_with_scope :new }
+      return new_user_registration_path
     end
   end
 end
+
